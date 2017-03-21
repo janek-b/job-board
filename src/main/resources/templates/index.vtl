@@ -1,3 +1,24 @@
 <!--index.vtl-->
-
+<h1>Post a Job</h1>
+<form action="/job" method="post">
+  <label for="title">Job Title</label>
+  <input type="text" name="title" id="title">
+  <label for="description">Description</label>
+  <input type="text" name="description" id="description">
+  <label for="contact">Contact Info</label>
+  <input type="text" name="contact" id="contact">
+  <label for="start-date">Start Date</label>
+  <input type="date" name="start-date" id="start-date">
+  <button type="submit">Post Job</button>
+</form>
+#if ($jobs)
+  #foreach ($job in $jobs)
+    #if ($job.getDaysLeft() > 0)
+      <h3>$job.getTitle()</h3>
+      <p>$job.getDescription()</p>
+      <p>$job.getContact()</p>
+      <p>Job starts in $job.getDaysLeft() days.</p>
+    #end
+  #end
+#end
 <!--index.vtl-->
