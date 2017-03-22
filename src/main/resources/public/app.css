@@ -1,0 +1,9 @@
+.job-post {
+  border: 1px solid black;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+hr {
+  border-top: 2px;
+}

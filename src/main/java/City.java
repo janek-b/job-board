@@ -43,4 +43,15 @@ public class City {
     return instances.get(id - 1);
   }
 
+  public static boolean exists(String name) {
+    boolean exists = false;
+    for (int i = 0; i < instances.size(); i++) {
+      City currentCity = instances.get(i);
+      if (name.equals(currentCity.getName())) {
+        exists = true;
+      }
+    }
+    return exists;
+  }
+
 }

@@ -60,4 +60,11 @@ public class CityTest {
     assertTrue(testCity.getJobs().contains(testJob));
   }
 
+  @Test public void exists_returnsTrueIfCityExists() {
+    City.clear();
+    City testCity = new City("portland");
+    assertEquals(false, City.exists("denver"));
+    assertEquals(true, City.exists("portland"));
+  }
+
 }

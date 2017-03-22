@@ -65,7 +65,10 @@ public class App {
     post("/cities", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       String name = request.queryParams("name");
-      City city = new City(name);
+      name = Character.toUpperCase(name.charAt(0)) + name.substring(1).toLowerCase();
+      if (!City.exists(name)) {
+        City city = new City(name);
+      }
       model.put("currentCity", City.all());
       model.put("cities", City.all());
       model.put("template", "templates/index.vtl");
