@@ -1,0 +1,22 @@
+<!--job-form.vtl-->
+<h1>Post a Job</h1>
+<form action="/jobs" method="post">
+  <label for="title">Job Title</label>
+  <input type="text" name="title" id="title">
+  <label for="description">Description</label>
+  <input type="text" name="description" id="description">
+  <label for="contact">Contact Info</label>
+  <input type="text" name="contact" id="contact">
+  <label for="start-date">Start Date</label>
+  <input type="date" name="start-date" id="start-date">
+  #if ($cities)
+    <select name="city">
+      #foreach ($city in $cities)
+        <option value="$city.getId()">$city.getName()</option>
+      #end
+    </select>
+  #end
+  <button type="submit">Post Job</button>
+</form>
+<a href="/cities/new">Add a City</a>
+<!--job-form.vtl-->

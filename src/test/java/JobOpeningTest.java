@@ -36,9 +36,10 @@ public class JobOpeningTest {
   }
 
   @Test
-  public void getDaysLeft_returnsNumberOfDays_150() {
-    JobOpening newJob = new JobOpening("title", "description", "contact", "2017-08-18");
-    assertEquals(150, newJob.getDaysLeft());
+  public void getDaysLeft_returnsNumberOfDays_1() {
+    LocalDate date = LocalDate.now().plusDays(1);
+    JobOpening newJob = new JobOpening("title", "description", "contact", date.toString());
+    assertEquals(1, newJob.getDaysLeft());
   }
 
 }
